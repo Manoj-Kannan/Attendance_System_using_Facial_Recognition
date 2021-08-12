@@ -1,3 +1,9 @@
+import os
+import numpy as np
+import cv2
+from datetime import datetime
+import face_recognition
+
 def imgEncode(images):
     for img in images:
         img = cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
@@ -17,12 +23,6 @@ def markAttendance(name):
             now = datetime.now()
             time = now.strftime('%H:%M:%S')
             f.writelines(f'\n{name},{time}')
-
-import os
-import numpy as np
-import cv2
-from datetime import datetime
-import face_recognition
 
 images = []
 classNames = []
