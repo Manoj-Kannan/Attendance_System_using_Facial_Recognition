@@ -5,6 +5,19 @@ def imgEncode(images):
         encodeImg.append(encode)
     return encodeImg
 
+def markAttendance(name):
+    nameList = []
+    with open('../attendance.csv','r+') as f:
+        entries = f.readlines()
+        for line in entries:
+            entry = line.split(',')
+            nameList.append(entry[0])
+        
+        if name not in nameList:
+            now = datetime.now()
+            time = now.strftime('%H:%M:%S')
+            f.writelines(f'\n{name},{time}')
+
 import os
 import numpy as np
 import cv2
@@ -61,6 +74,7 @@ while True:
             cv2.rectangle(live, pt1=(x1,y1), pt2=(x2,y2), color=(0,255,0), thickness=1)
             cv2.rectangle(live, (x1,y2),(x2,y2+35),(0,255,0), cv2.FILLED)
             cv2.putText(live, name.split()[0], (x1+6,y2+25), cv2.FONT_HERSHEY_COMPLEX, 1, (255,255,255), 2)
+            markAttendance(name)
             
     
     cv2.imshow('Live', live)
