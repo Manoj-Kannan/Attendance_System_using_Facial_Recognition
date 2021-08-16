@@ -19,3 +19,6 @@ Smart Attendance System by analyzing Human biometrics (Facial Recognition).
 
 ### Test Case 4:
 ![result_5](https://user-images.githubusercontent.com/71482820/129432419-4d8c781f-a0d1-4a17-bf77-a854a097b3ec.jpg)
+
+### attendance.csv:
+![result_1](https://user-images.githubusercontent.com/71482820/129575296-249e121e-7e57-4754-b303-a690846936d9.jpg)
